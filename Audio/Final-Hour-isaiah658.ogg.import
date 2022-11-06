@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://import/Final-Hour-isaiah658.ogg-e16cc70ca1d3bb6c034dd136ba2913db.oggstr"
+
+[deps]
+
+source_file="res://Audio/Final-Hour-isaiah658.ogg"
+dest_files=[ "res://import/Final-Hour-isaiah658.ogg-e16cc70ca1d3bb6c034dd136ba2913db.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

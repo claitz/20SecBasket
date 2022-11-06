@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/AudioManager.gd" type="Script" id=1]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ASP_0" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_1" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_2" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_3" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_4" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_5" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_6" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_7" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_8" type="AudioStreamPlayer" parent="."]
+
+[node name="ASP_9" type="AudioStreamPlayer" parent="."]

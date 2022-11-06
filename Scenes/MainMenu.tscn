@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Fonts/Symtext.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Bombball.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/VFX/spotlight_1.png" type="Texture" id=4]
+[ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.0167598, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.984619, 0.015625, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 27
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.968627, 0.662745, 0.32549, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.968627, 0.662745, 0.32549, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 1, 0.376471, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_top = 22.0
+margin_right = 1024.0
+margin_bottom = 90.0
+
+[node name="TitleLabel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -312.0
+margin_right = 308.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 308, 250 )
+custom_colors/font_color = Color( 1, 0.376471, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "2   SEC BASKET"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 339.75, 34 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Control"]
+material = SubResource( 2 )
+position = Vector2( 356.75, 11 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+amount = 10
+lifetime = 0.3
+randomness = 1.0
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 3.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 300.0
+angular_velocity = 449.17
+angular_velocity_random = 1.0
+angle_random = 0.62
+color_ramp = SubResource( 3 )
+anim_speed = 1.0
+
+[node name="PlayButtonContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlayButton" parent="PlayButtonContainer" instance=ExtResource( 5 )]
+margin_left = 452.0
+margin_top = 275.0
+margin_right = 572.0
+margin_bottom = 325.0
+size_flags_horizontal = 5
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 10 )
+text = "PLAY"
+
+[connection signal="pressed" from="PlayButtonContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
