@@ -33,13 +33,15 @@ I had never used Godot before so I tried to test out a few Engine's features add
 
 Once you have cloned the repository, there's only one configuration step necessary to run your local game:
 
-### Configuring Silentwolf
+### Installing and configuring Silentwolf
 
 - Register for a free account on [SilentWolf](https://silentwolf.com/)
+- [Download the SilentWolf plugin](https://silentwolf.com/download) for Godot 3.x
+- Extract the `silent_wolf` folder from the zip in your `.\addons` folder (you might need to create it)
 - Copy (or rename) `.\AutoLoad\SilentWolf.config.example.gd` to `.\AutoLoad\SilentWolf.config.gd`
 - Edit the content of the new file to match your SilentWolf game configuration
 - Add `.\AutoLoad\SilentWolf.config.gd` to your project AutoLoads
-
+- Reload the project
 
 ## License
 
